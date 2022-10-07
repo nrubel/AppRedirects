@@ -1,11 +1,13 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import apps from "../utils/apps";
 
 const DetectApp: FC = () => {
   const params = useParams();
   const appName: string = params.app || "";
-  const [message, setMessage] = useState<string | null>(null);
+  const gotoFlyhub = () => {
+    window.open(`https://flyhub.com`, "_self");
+  };
 
   useEffect(() => {
     const isIOS: boolean =
@@ -22,22 +24,21 @@ const DetectApp: FC = () => {
         if (!!apps[appName].ios) {
           window.open(apps[appName].ios!, "_self");
         } else {
-          setMessage(`[${appName}] redirecting to app store`);
+          gotoFlyhub();
         }
       } else {
         if (!!apps[appName].andorid) {
           window.open(apps[appName].andorid!, "_self");
         } else {
-          setMessage(`[${appName}] redirecting to play store`);
+          gotoFlyhub();
         }
       }
     } else {
-      setMessage(`App not found!`);
-      window.open(`https://flyhub.com`, "_self");
+      gotoFlyhub();
     }
-  }, [appName, setMessage, apps]);
+  }, [appName, apps]);
 
-  return <>{message}</>;
+  return <>Redirecting ...</>;
 };
 
 export default DetectApp;

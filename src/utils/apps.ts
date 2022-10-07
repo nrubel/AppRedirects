@@ -5,12 +5,8 @@ export interface AppListItem {
 
 const apps: { [key: string]: AppListItem } = {
   b2b_uae: {
-    andorid: null,
-    ios: null,
-  },
-  b2b_bd: {
-    andorid: null,
-    ios: null,
+    andorid: `https://play.google.com/store/apps/`,
+    ios: `https://www.apple.com/app-store/`,
   },
 };
 
