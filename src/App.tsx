@@ -12,9 +12,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorRoute />,
   },
   {
-    path: "/:app",
+    path: "/apps/:app",
     element: <DetectApp />,
     errorElement: <ErrorRoute />,
+  },
+  {
+    path: "*",
+    element: <ErrorRoute />,
   },
 ]);
 
