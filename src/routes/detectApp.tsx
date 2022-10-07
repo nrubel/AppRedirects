@@ -38,7 +38,7 @@ const DetectApp: FC = () => {
     }
   }, [appName, apps]);
 
-  return <>Redirecting ...</>;
+  return <>Please wait...</>;
 };
 
 export default DetectApp;
