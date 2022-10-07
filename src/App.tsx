@@ -1,11 +1,24 @@
 /** @format */
 
-function App() {
-  const iOS: boolean =
-    ["iPad Simulator", "iPhone Simulator", "iPod Simulator", "iPad", "iPhone", "iPod"].includes(navigator.platform) ||
-    // iPad on iOS 13 detection
-    (navigator.platform.includes("Mac") && "ontouchend" in document);
+import { FC } from "react";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import DetectApp from "./routes/detectApp";
+import ErrorRoute from "./routes/errorRoute";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Loading...</div>,
+    errorElement: <ErrorRoute />,
+  },
+  {
+    path: "/:app",
+    element: <DetectApp />,
+    errorElement: <ErrorRoute />,
+  },
+]);
+
+const App: FC = () => {
   return (
     <div
       style={{
@@ -14,10 +27,11 @@ function App() {
         height: `100vh`,
         justifyContent: "center",
         alignItems: "center",
-      }}>
-      {iOS ? "ios" : "android"}
+      }}
+    >
+      <RouterProvider router={router} />
     </div>
   );
-}
+};
 
 export default App;
