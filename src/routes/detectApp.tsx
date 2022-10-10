@@ -27,8 +27,8 @@ const DetectApp: FC = () => {
           gotoFlyhub();
         }
       } else {
-        if (!!apps[appName].andorid) {
-          window.open(apps[appName].andorid!, "_self");
+        if (!!apps[appName].android) {
+          window.open(apps[appName].android!, "_self");
         } else {
           gotoFlyhub();
         }

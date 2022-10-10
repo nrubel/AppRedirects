@@ -18,6 +18,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
+    "hrms_types": "git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#5053e9f",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
