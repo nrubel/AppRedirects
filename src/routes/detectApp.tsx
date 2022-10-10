@@ -1,44 +1,23 @@
-import { FC, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { FC } from "react";
 import { useParams } from "react-router-dom";
-import apps from "../utils/apps";
+import CheckAndRedirect from "../components/mobileApps/CheckAndRedirect";
+import Endpoints from "../utils/Endpoints";
+import ErrorRoute from "./errorRoute";
 
 const DetectApp: FC = () => {
   const params = useParams();
   const appName: string = params.app || "";
-  const gotoFlyhub = () => {
-    window.open(`https://flyhub.com`, "_self");
-  };
 
-  useEffect(() => {
-    const isIOS: boolean =
-      [
-        "iPad Simulator",
-        "iPhone Simulator",
-        "iPod Simulator",
-        "iPad",
-        "iPhone",
-        "iPod",
-      ].includes(navigator.platform) || navigator.platform.includes("Mac");
-    if (!!apps[`${appName}`]) {
-      if (isIOS) {
-        if (!!apps[appName].ios) {
-          window.open(apps[appName].ios!, "_self");
-        } else {
-          gotoFlyhub();
-        }
-      } else {
-        if (!!apps[appName].android) {
-          window.open(apps[appName].android!, "_self");
-        } else {
-          gotoFlyhub();
-        }
-      }
-    } else {
-      gotoFlyhub();
-    }
-  }, [appName, apps]);
+  const { isLoading, error, data, isFetching } = useQuery(["fetch"], () =>
+    fetch(`${Endpoints.baseUrl}/redirects?type=mobile&path=${appName}`, {
+      mode: "cors",
+    }).then((res: Response) => res.json())
+  );
 
-  return <>Please wait...</>;
+  if (isLoading || isFetching) return <>Please wait...</>;
+  else if (!!error || (!!data && !!data.error)) return <ErrorRoute />;
+  else return <CheckAndRedirect {...data.result} />;
 };
 
 export default DetectApp;

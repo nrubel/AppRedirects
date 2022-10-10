@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --mode production",
+    "build:test": "tsc && vite build --mode test",
     "postbuild": "git add . && git commit -m \"$npm_package_version prod build\" && git push",
+    "postbuild:test": "git add . && git commit -m \"$npm_package_version test build\" && git push",
     "preview": "vite preview"
   },
   "dependencies": {
