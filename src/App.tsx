@@ -1,7 +1,7 @@
 /** @format */
 
 import { FC } from "react";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DetectApp from "./routes/detectApp";
 import ErrorRoute from "./routes/errorRoute";
 
