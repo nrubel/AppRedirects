@@ -8,7 +8,7 @@ import ErrorRoute from "./routes/errorRoute";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Loading...</div>,
+    element: <ErrorRoute />,
     errorElement: <ErrorRoute />,
   },
   {
