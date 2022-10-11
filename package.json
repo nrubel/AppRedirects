@@ -4,7 +4,8 @@
   "version": "0.0.5",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
+    "dev:test": "vite --mode test",
     "build": "tsc && vite build --mode production",
     "build:test": "tsc && vite build --mode test",
     "postbuild": "git add . && git commit -m \"$npm_package_version prod build\" && git push",
@@ -12,28 +13,33 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.10.3",
-    "@tanstack/react-query-devtools": "^4.11.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.8",
+    "@reduxjs/toolkit": "^1.8.6",
+    "hrms_types": "git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#4e68b92",
     "localforage": "^1.10.0",
     "luxon": "^3.0.4",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
-    "hrms_types": "git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#5053e9f",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
+    "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8",
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
-    "eslint": "^8.24.0",
-    "eslint-plugin-react": "^7.31.8",
     "vite-plugin-eslint": "^1.8.1"
   }
 }
