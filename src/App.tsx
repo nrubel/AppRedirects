@@ -1,19 +1,23 @@
 /** @format */
 
+import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import { FC } from "react";
+import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { store } from "./dataStore/store";
 import DetectApp from "./routes/detectApp";
 import ErrorRoute from "./routes/errorRoute";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import HomeRoute from "./routes/homeRoute";
+import { theme } from "./utils/theme";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ErrorRoute />,
+    element: <HomeRoute />,
     errorElement: <ErrorRoute />,
   },
   {
-    path: "/apps/:app",
+    path: "/:app",
     element: <DetectApp />,
     errorElement: <ErrorRoute />,
   },
@@ -23,23 +27,16 @@ const router = createBrowserRouter([
   },
 ]);
 
-const queryClient = new QueryClient();
-
 const App: FC = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <div
-        style={{
-          display: "flex",
-          width: `100%`,
-          height: `100vh`,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <RouterProvider router={router} />
-      </div>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline enableColorScheme />
+        <Container sx={{ py: 3 }}>
+          <RouterProvider router={router} />
+        </Container>
+      </ThemeProvider>
+    </Provider>
   );
 };
 
