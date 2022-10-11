@@ -21,6 +21,10 @@ const router = createBrowserRouter([
     element: <DetectApp />,
     errorElement: <ErrorRoute />,
   },
+  {
+    path: "*",
+    element: <ErrorRoute />,
+  },
 ]);
 
 const App: FC = () => {
@@ -28,7 +32,7 @@ const App: FC = () => {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
-        <Container maxWidth={"sm"}>
+        <Container sx={{ py: 3 }}>
           <RouterProvider router={router} />
         </Container>
       </ThemeProvider>

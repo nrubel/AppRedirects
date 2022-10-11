@@ -2,7 +2,7 @@ import { FC, useEffect } from "react";
 
 const ErrorRoute: FC = () => {
   useEffect(() => {
-    // window.open("https://flyhub.com", "_self");
+    window.open("https://flyhub.com", "_self");
   });
   return <>Flyhub.com</>;
 };
