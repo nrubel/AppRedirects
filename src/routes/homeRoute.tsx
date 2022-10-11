@@ -7,7 +7,8 @@ const HomeRoute: FC = () => {
   const { isLoading, error, data, isFetching } = useGetAppsQuery(null);
 
   if (isLoading || isFetching) return <>Loading...</>;
-  else if (!!error || (!!data && !!data.error)) return <ErrorRoute />;
+  else if (!!error || (!!data && !!data.error && !data.result))
+    return <ErrorRoute />;
   else return <HomeView list={data?.result || []} />;
 };
 
