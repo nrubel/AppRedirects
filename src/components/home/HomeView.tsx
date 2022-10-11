@@ -15,7 +15,7 @@ const HomeView: FC<{
     >
       {list.map(({ path, id, android, cover, ios, name }: IFRedirect) => {
         return (
-          <Grid item xs={4} key={`redirect-item-${id}`}>
+          <Grid item xs={12} md={6} lg={4} key={`redirect-item-${id}`}>
             <Stack direction={"row"} spacing={2} alignItems={"center"}>
               {!!cover && (
                 <Avatar
