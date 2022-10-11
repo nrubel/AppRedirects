@@ -21,7 +21,7 @@ export const api = createApi({
     }),
     getSingleApp: builder.query<GetSingleAppResponse, string>({
       query: (path: string) => ({
-        url: `/apps?path=${path}`,
+        url: `/apps/${path}`,
       }),
     }),
   }),

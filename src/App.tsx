@@ -21,10 +21,6 @@ const router = createBrowserRouter([
     element: <DetectApp />,
     errorElement: <ErrorRoute />,
   },
-  {
-    path: "*",
-    element: <ErrorRoute />,
-  },
 ]);
 
 const App: FC = () => {
