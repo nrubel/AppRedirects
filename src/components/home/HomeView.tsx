@@ -26,7 +26,7 @@ const HomeView: FC<{
                 />
               )}
               <Box>
-                <Typography variant={`h4`} component={"h2"}>
+                <Typography variant={`h5`} component={"h2"}>
                   {name}
                 </Typography>
                 <Stack direction={"row"}>

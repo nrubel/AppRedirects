@@ -9,7 +9,7 @@ const DetectApp: FC = () => {
   const appName: string = params.app || "";
   const { isLoading, error, data, isFetching } = useGetSingleAppQuery(appName);
 
-  if (isLoading || isFetching) return <>...</>;
+  if (isLoading || isFetching) return <>Please wait...</>;
   else if (!!error || (!!data && !!data.error)) return <ErrorRoute />;
   else return <CheckAndRedirect {...data?.result!} />;
 };
