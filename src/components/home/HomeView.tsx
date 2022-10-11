@@ -17,14 +17,12 @@ const HomeView: FC<{
         return (
           <Grid item xs={12} md={6} lg={4} key={`redirect-item-${id}`}>
             <Stack direction={"row"} spacing={2} alignItems={"center"}>
-              {!!cover && (
-                <Avatar
-                  alt={path}
-                  src={Endpoints.baseUrl + cover}
-                  variant={"rounded"}
-                  sx={{ width: 100, height: 100 }}
-                />
-              )}
+              <Avatar
+                alt={path}
+                src={Endpoints.baseUrl + cover}
+                variant={"rounded"}
+                sx={{ width: 100, height: 100 }}
+              />
               <Box>
                 <Typography variant={`h5`} component={"h2"}>
                   {name}
