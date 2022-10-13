@@ -1,8 +1,9 @@
-import { Avatar, Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { Android, Apple } from "@mui/icons-material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { IFRedirect } from "hrms_types";
 import { FC } from "react";
 import Endpoints from "../../utils/Endpoints";
+import LazyImage from "../global/lazyImage";
 
 const HomeView: FC<{
   list: IFRedirect[];
@@ -17,11 +18,10 @@ const HomeView: FC<{
         return (
           <Grid item xs={12} md={6} lg={4} key={`redirect-item-${id}`}>
             <Stack direction={"row"} spacing={2} alignItems={"center"}>
-              <Avatar
-                alt={path}
-                src={Endpoints.baseUrl + cover}
-                variant={"rounded"}
+              <LazyImage
                 sx={{ width: 100, height: 100 }}
+                alt={path}
+                src={!!cover ? Endpoints.baseUrl + cover : "/flyhub.png"}
               />
               <Box>
                 <Typography variant={`h5`} component={"h2"}>
