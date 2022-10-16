@@ -9,7 +9,7 @@ const HomeRoute: FC = () => {
   if (isLoading || isFetching) return <>Loading...</>;
   else if (!!error || (!!data && !!data.error && !data.result))
     return <ErrorRoute />;
-  else return <HomeView list={data?.result || []} />;
+  else return <HomeView list={data?.result || []} name={`All`} />;
 };
 
 export default HomeRoute;

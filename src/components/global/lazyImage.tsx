@@ -1,14 +1,15 @@
 /** @format */
 
 import { Box, SxProps } from "@mui/material";
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
 import { theme } from "../../utils/theme";
 
 const LazyImage: FC<{
   src?: string;
+  fallbackSrc?: string;
   alt: string;
   sx?: SxProps;
-}> = ({ src, alt, sx }) => {
+}> = ({ src, alt, sx, fallbackSrc }) => {
   let styles: SxProps = {
     color: "white",
     textAlign: "center",
@@ -34,6 +35,10 @@ const LazyImage: FC<{
           alt={alt}
           loading={"lazy"}
           sx={styles}
+          onError={(e: SyntheticEvent<HTMLImageElement, Event>) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = fallbackSrc || "/flyhub.png";
+          }}
         />
       ) : (
         alt
