@@ -1,5 +1,6 @@
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import { FC } from "react";
+import LazyImage from "./lazyImage";
 
 const TopBar: FC<{ name: string }> = ({ name }) => {
   return (
@@ -10,7 +11,7 @@ const TopBar: FC<{ name: string }> = ({ name }) => {
           justifyContent: "space-between",
         }}
       >
-        <Box component={"img"} src={`/logo.svg`} alt={`Flyhub.com`} />
+        <LazyImage alt={"flyhub.com"} src={"/logo.svg"} />
         <Typography variant="h6" color="inherit" component="div">
           {name}
         </Typography>

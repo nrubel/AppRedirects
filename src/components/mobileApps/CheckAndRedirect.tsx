@@ -1,5 +1,6 @@
 import { IFRedirect } from "hrms_types";
 import { FC, useEffect } from "react";
+import FullPageLoader from "../global/loader";
 
 const CheckAndRedirect: FC<IFRedirect> = ({ android, ios }) => {
   const gotoFlyhub = () => {
@@ -31,7 +32,7 @@ const CheckAndRedirect: FC<IFRedirect> = ({ android, ios }) => {
     }
   }, [android, ios]);
 
-  return <>Please wait...</>;
+  return <FullPageLoader />;
 };
 
 export default CheckAndRedirect;
