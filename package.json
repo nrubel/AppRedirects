@@ -7,7 +7,7 @@
     "dev": "vite --mode development",
     "dev:test": "vite --mode test",
     "build": "tsc && vite build --mode production",
-    "build:test": "tsc && vite build --mode test",
+    "build:test": "VITE_API_URL=https://adminpanel-test.hrms.flyhub.com tsc && vite build",
     "postbuild": "git add . && git commit -m \"$npm_package_version prod build\" && git push",
     "postbuild:test": "git add . && git commit -m \"$npm_package_version test build\" && git push",
     "preview": "vite preview"
