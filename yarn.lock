@@ -4755,9 +4755,9 @@ hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1, hoist-non-react-
   dependencies:
     react-is "^16.7.0"
 
-"hrms_types@git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#0d0b073":
+"hrms_types@git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#964a214":
   version "1.6.1"
-  resolved "git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#0d0b0730fbdd65316b7de93d4ed1b5f861d058d4"
+  resolved "git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#964a214d6f51fc4c333c22c6487a295d099469a0"
   dependencies:
     "@sentry/node" "^7.7.0"
     "@sentry/tracing" "^7.7.0"

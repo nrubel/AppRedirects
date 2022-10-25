@@ -19,7 +19,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.8",
     "@reduxjs/toolkit": "^1.8.6",
-    "hrms_types": "git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#0d0b073",
+    "hrms_types": "git+ssh://git@github.com:nrubel/Flyhub-HRMS-Types.git#964a214",
     "localforage": "^1.10.0",
     "luxon": "^3.0.4",
     "match-sorter": "^6.3.1",
