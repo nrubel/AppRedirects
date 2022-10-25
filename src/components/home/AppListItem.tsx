@@ -73,7 +73,7 @@ const AppListItem: FC<{ item: IFRedirect; isOdd: boolean }> = ({
                     Endpoints.baseUrl +
                     `/assets/image/flags/${country.code.toLowerCase()}.svg`
                   }
-                  alt={"install app"}
+                  alt={country.code}
                   loading={"lazy"}
                   sx={{ width: 36, borderRadius: 0.6 }}
                 />
