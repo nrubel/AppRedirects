@@ -15,7 +15,9 @@ const DetectApp = () => {
     return <FullPageLoader />;
   } else if (!!data && !!data?.result) {
     if (Array.isArray(data?.result)) {
-      return <HomeView list={data?.result} name={appName} />;
+      return (
+        <HomeView list={data?.result} name={`${appName} Apps`.toUpperCase()} />
+      );
     }
     return <CheckAndRedirect {...data?.result} />;
   } else {

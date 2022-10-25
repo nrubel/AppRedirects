@@ -10,7 +10,10 @@ const HomeRoute: FC = () => {
   if (isLoading || isFetching || (!error && !data)) return <FullPageLoader />;
   else if (!!error || (!!data && !!data.error && !data.result))
     return <ErrorRoute />;
-  else return <HomeView list={data?.result || []} name={`All`} />;
+  else
+    return (
+      <HomeView list={data?.result || []} name={`All Apps`.toUpperCase()} />
+    );
 };
 
 export default HomeRoute;
