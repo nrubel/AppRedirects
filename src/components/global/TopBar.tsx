@@ -9,7 +9,7 @@ const TopBar: FC<{ name: string }> = ({ name }) => {
     <AppBar
       position="static"
       sx={{
-        my: 2,
+        mb: 2,
         boxShadow: "none",
       }}
       color={`transparent`}

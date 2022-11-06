@@ -11,7 +11,7 @@ const HomeView: FC<{
   name: string;
 }> = ({ list, name }) => {
   return (
-    <Container>
+    <Container sx={{ py: 3 }}>
       <TopBar name={name} />
       {!(list || []).length ? (
         <Typography variant={`h5`} component={"h2"}>

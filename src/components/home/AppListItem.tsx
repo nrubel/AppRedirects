@@ -29,7 +29,7 @@ const AppListItem: FC<{ item: IFRedirect; isOdd: boolean }> = ({
         backgroundColor: "#FFFFFF",
         borderRadius: 4,
         mb: 3.75,
-        p: mdMatch ? 10 : 5,
+        p: mdMatch ? 10 : 3.75,
       })}
     >
       <Grid
@@ -70,7 +70,7 @@ const AppListItem: FC<{ item: IFRedirect; isOdd: boolean }> = ({
             component={"h2"}
             sx={(theme: Theme) => ({
               mb: 2,
-              fontSize: mdMatch ? 44 : 32,
+              fontSize: mdMatch ? 44 : 26,
               fontWeight: 700,
               lineHeight: 1.23,
               [theme.breakpoints.down("md")]: {
@@ -107,16 +107,19 @@ const AppListItem: FC<{ item: IFRedirect; isOdd: boolean }> = ({
                   }
                   alt={country.code}
                   loading={"lazy"}
-                  sx={{ width: 36, borderRadius: 0.6 }}
+                  sx={{
+                    width: mdMatch ? 36 : 24,
+                    borderRadius: 0.6,
+                  }}
                 />
               </Suspense>
               <Typography
                 component={"h2"}
                 sx={{
-                  fontSize: 24,
+                  fontSize: mdMatch ? 24 : 18,
                   fontWeight: 700,
                   lineHeight: 1.23,
-                  ml: 3,
+                  ml: mdMatch ? 3 : 1.5,
                 }}
               >
                 {country?.name}

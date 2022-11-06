@@ -1,6 +1,6 @@
 /** @format */
 
-import { Container, CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { FC } from "react";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -32,9 +32,7 @@ const App: FC = () => {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
-        <Container sx={{ py: 3 }}>
-          <RouterProvider router={router} />
-        </Container>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </Provider>
   );
